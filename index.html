@@ -90,7 +90,7 @@
       font-weight: 600;
     }
     .main-nav .nav-item.active:hover {
-      background: var(--blue-dark);
+      background: var(--blue-main);
       color: #ffffff;
     }
 
@@ -856,6 +856,13 @@
       .srv-apoyo-copy h3 { font-size: 1.1rem; }
     }
 
+    @media (max-width: 768px) {
+      .cr-grid { grid-template-columns: 1fr !important; margin-left: 0 !important; }
+      .cr-map { width: 100% !important; height: 220px !important; }
+      .cr-map iframe { width: 100% !important; height: 220px !important; }
+      .svm-log-grid { grid-template-columns: 1fr !important; }
+    }
+
     /* ── PÁGINA SERVICIOS COMPLETA ── */
     .srv-modal {
       position: fixed; inset: 0; z-index: 99;
@@ -1053,7 +1060,7 @@
       </nav>
 
       <div class="nav-social">
-        <span class="social-link linkedin">in</span>
+        <a href="https://www.linkedin.com/company/mss-marine-systems-structures" target="_blank" class="social-link linkedin" aria-label="LinkedIn">in</a>
       </div>
 
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>

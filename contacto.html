@@ -32,7 +32,8 @@
       border-bottom: 3px solid transparent; transition: 0.18s ease;
     }
     .main-nav a:hover { color: var(--blue-main); background: rgba(45,111,174,0.06); }
-    .main-nav a.active { color: #fff; background: var(--blue-main); font-weight: 600; }
+        .main-nav a.active { color: #fff; background: var(--blue-main); font-weight: 600; }
+    .main-nav a.active:hover { color: #fff !important; background: var(--blue-main) !important; }
     .nav-social { display: flex; align-items: center; margin-left: 16px; }
     .social-link.linkedin { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 4px; background: var(--blue-main); color: white; font-weight: 800; font-size: 0.95rem; }
     .menu-toggle { display: none; background: none; border: none; color: var(--blue-main); font-size: 1.7rem; cursor: pointer; align-self: center; }
@@ -394,7 +395,7 @@
         <a class="active" href="contacto.html">Contacto</a>
       </nav>
       <div class="nav-social">
-        <span class="social-link linkedin">in</span>
+        <a href="https://www.linkedin.com/company/mss-marine-systems-structures" target="_blank" class="social-link linkedin" aria-label="LinkedIn">in</a>
       </div>
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
     </div>
@@ -413,7 +414,7 @@
         </div>
 
         <form id="contactForm" style="max-width:900px;margin:0 auto;">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px 48px;margin-bottom:32px;">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:32px 48px;margin-bottom:32px;">
             <div>
               <label style="display:block;font-size:0.75rem;font-weight:700;color:var(--blue-dark);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;">Nombre y Apellido :</label>
               <input type="text" style="width:100%;box-sizing:border-box;background:rgba(255,255,255,0.75);border:1.5px solid #c8d8ea;border-radius:8px;padding:14px 16px;color:var(--blue-dark);font-size:0.95rem;outline:none;" />

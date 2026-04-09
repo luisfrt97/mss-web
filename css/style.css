@@ -129,10 +129,14 @@ textarea {
 }
 
 .main-nav a.active {
-  color: var(--blue-main);
-  border-bottom-color: var(--blue-main);
-  font-weight: 700;
-  background: none;
+  color: #fff;
+  background: var(--blue-main);
+  font-weight: 600;
+}
+
+.main-nav a.active:hover {
+  color: #fff;
+  background: var(--blue-main);
 }
 
 .nav-social {
@@ -1173,4 +1177,62 @@ textarea {
 }
 .short-page .experience-section-classic {
   min-height: auto;
+}
+
+/* ── RESPONSIVE ADDITIONS ── */
+@media (max-width: 768px) {
+  /* Footer */
+  footer[style], .site-footer-bottom > div {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    padding: 16px 20px !important;
+  }
+  /* Contact map section */
+  .cr-grid {
+    grid-template-columns: 1fr !important;
+    margin-left: 0 !important;
+  }
+  .cr-map {
+    width: 100% !important;
+    height: 220px !important;
+  }
+  .cr-map iframe {
+    width: 100% !important;
+    height: 220px !important;
+  }
+  /* Services modal grid */
+  .svm-log-grid {
+    grid-template-columns: 1fr !important;
+  }
+  /* Nosotros image */
+  .nos-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Contact form new grid */
+  form[style*="grid-template-columns:1fr 1fr"] > div,
+  div[style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* Footer inline */
+  footer > div > div[style*="padding-left"] {
+    padding-left: 0 !important;
+  }
+  footer > div > div[style*="padding-right"] {
+    padding-right: 0 !important;
+  }
+  /* Hero text */
+  .hero-home-copy h1 {
+    font-size: 1.5rem !important;
+  }
+  /* Section titles */
+  .sec-title {
+    font-size: 1.5rem !important;
+  }
+  .svm-sec1 h2, .svm-sec2 h2 {
+    font-size: 1.3rem !important;
+  }
 }
