@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MSS | Nosotros</title>
+  <meta name="description" content="Por qué trabajar con MSS." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    html, body { scroll-behavior: auto !important;   min-height: 100vh;
+    }
+
+    /* HEADER igual que index */
+    .site-header {
+      background: #ffffff;
+      
+      border-bottom: 1px solid #e0e6ed;
+      position: sticky; top: 0; z-index: 200;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+    .header-inner { min-height: 80px; display: flex; align-items: center; justify-content: space-between; }
+    .logo-wrap { display: flex; align-items: center; justify-content: center; padding: 0 28px 0 0; margin-left: 24px; background: none; border: none; cursor: pointer; flex-shrink: 0; align-self: center; text-decoration: none; }
+    .logo-img { height: 52px; width: auto; max-height: 52px; display: block; object-fit: contain; object-position: left center; }
+    .main-nav { display: flex; align-items: stretch; margin-left: auto; }
+    .main-nav a {
+      display: flex; align-items: center; justify-content: center;
+      padding: 0 20px; min-height: 80px; font-size: 0.93rem; font-weight: 500;
+      color: var(--blue-dark); text-decoration: none; white-space: nowrap;
+      border-bottom: 3px solid transparent; transition: 0.18s ease;
+    }
+    .main-nav a:hover { color: var(--blue-main); background: rgba(45,111,174,0.06); }
+    .main-nav a.active { color: #fff; background: var(--blue-main); border-bottom-color: transparent; font-weight: 600; }
+    .nav-social { display: flex; align-items: center; margin-left: 16px; }
+    .social-link.linkedin { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 4px; background: var(--blue-main); color: white; font-weight: 800; font-size: 0.95rem; }
+    .menu-toggle { display: none; background: none; border: none; color: var(--blue-main); font-size: 1.7rem; cursor: pointer; align-self: center; }
+
+    /* ── PÁGINA NOSOTROS ── */
+    .nos-page {
+      padding: 80px 0 100px;
+      background: linear-gradient(160deg, #eef4fd 0%, #f8fbff 40%, #ffffff 70%);
+      position: relative;
+    }
+    .nos-page::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(45,111,174,0.07) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+    .nos-page .container { position: relative; max-width: 900px; }
+
+    /* TÍTULO PRINCIPAL */
+    .nos-page-title {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+    .nos-page-title h1 {
+      font-size: clamp(1.9rem, 2.8vw, 2.6rem);
+      font-weight: 700;
+      color: var(--blue-dark);
+      margin: 0 0 10px;
+      font-family: 'Inter', sans-serif;
+    }
+    .nos-page-title .section-line {
+      width: 78px; height: 4px;
+      background: var(--blue-light);
+      margin: 12px auto 20px;
+      border-radius: 2px;
+    }
+    .nos-page-lead {
+      font-size: 0.97rem;
+      color: var(--blue-dark);
+      line-height: 1.7;
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* BLOQUE 1: Por qué trabajar + imagen */
+    .nos-top {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 48px;
+      align-items: stretch;
+      margin-bottom: 56px;
+    }
+    .nos-top-left h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--blue-dark);
+      margin: 0 0 10px;
+      font-family: 'Inter', sans-serif;
+    }
+    .nos-top-lead {
+      color: var(--text-main);
+      font-size: 0.97rem;
+      line-height: 1.65;
+      margin: 0 0 28px;
+    }
+    .nos-top > div:last-child {
+      display: flex;
+      align-self: stretch;
+    }
+    .nos-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+      border-radius: 14px;
+      box-shadow: 0 12px 36px rgba(22,59,102,0.16);
+    }
+    .nos-features { display: flex; flex-direction: column; }
+    .nos-feat {
+      padding: 16px 0 16px 16px;
+      border-bottom: 1px solid rgba(22,59,102,0.08);
+      border-left: 3px solid var(--blue-main);
+      margin-left: 0;
+      margin-bottom: 12px;
+    }
+    .nos-feat:first-child { padding-top: 16px; }
+    .nos-feat h3 {
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: var(--blue-dark);
+      margin: 0 0 4px;
+    }
+    .nos-feat p {
+      margin: 0;
+      color: var(--text-main);
+      font-size: 0.93rem;
+      line-height: 1.58;
+    }
+
+    /* BLOQUE 2 */
+    .nos-how {
+      background: linear-gradient(150deg, #ffffff 60%, #eef4fd 100%);
+      border-radius: 16px;
+      padding: 40px 44px;
+      margin-bottom: 32px;
+      border: 1.5px solid rgba(22,59,102,0.12);
+      box-shadow: 0 4px 18px rgba(22,59,102,0.07);
+    }
+    .nos-how-lead {
+      color: var(--text-main);
+      font-size: 0.97rem;
+      line-height: 1.65;
+      margin: 0 0 24px;
+    }
+    .nos-how-label {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--blue-dark);
+      margin: 0 0 20px;
+    }
+    .nos-steps {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      gap: 0;
+      align-items: start;
+    }
+    .nos-step {
+      background: #f4f8ff;
+      border: 1px solid rgba(22,59,102,0.12);
+      border-radius: 12px;
+      padding: 22px 20px;
+      text-align: center;
+      position: relative;
+    }
+    .nos-step::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 20%; right: 20%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--blue-main), var(--blue-light));
+      border-radius: 0 0 4px 4px;
+      opacity: 0.45;
+    }
+    .nos-step h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--blue-dark);
+      margin: 0 0 8px;
+    }
+    .nos-step p {
+      margin: 0;
+      color: var(--text-main);
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+    .nos-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 12px;
+      color: var(--blue-light);
+      font-size: 1.4rem;
+      padding-top: 24px;
+    }
+
+    /* BLOQUE 3: CTA */
+    .nos-cta {
+      background: linear-gradient(135deg, var(--blue-dark) 0%, #1e5491 100%);
+      border-radius: 16px;
+      padding: 36px 44px;
+      text-align: center;
+    }
+    .nos-cta p {
+      font-size: 1rem;
+      font-weight: 500;
+      color: rgba(255,255,255,0.88);
+      margin: 0 auto 18px;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+    .nos-cta-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 10px 24px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.25);
+      letter-spacing: 0.03em;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .nos-top { grid-template-columns: 1fr; gap: 28px; }
+      .nos-top > div:last-child { order: -1; }
+      .nos-img { height: 220px; }
+      .nos-steps { grid-template-columns: 1fr; }
+      .nos-arrow { display: none; }
+      .nos-how { padding: 28px 22px; }
+    }
+    @media (max-width: 820px) {
+      .main-nav { display: none; }
+      .main-nav.active { display: flex; flex-direction: column; width: 100%; background: #fff; }
+      .main-nav a { min-height: 52px; justify-content: flex-start; padding: 0 16px; border-bottom: 1px solid #eee; }
+      .menu-toggle { display: block; }
+      .header-inner { padding: 10px 0; flex-wrap: wrap; min-height: auto; }
+      .logo-img { height: 40px; }
+      .nos-page { padding: 48px 0 64px; }
+      .nos-how { padding: 24px 18px; }
+    }
+    @media (max-width: 600px) {
+      .nos-top { gap: 20px; }
+      .nos-img { height: 180px; }
+      .nos-how { padding: 20px 16px; }
+      .nos-step { padding: 18px 14px; }
+      .nos-page-title h1 { font-size: 1.5rem; }
+    }
+      
+      
+  </style>
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="logo-wrap" aria-label="Ir al inicio">
+        <img src="img/logo2.png" alt="MSS Marine Systems & Structures" class="logo-img" />
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#servicios">Nuestros servicios</a>
+        <a href="index.html#experiencia">Experiencia del equipo</a>
+        <a class="active" href="nosotros.html">Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <div class="nav-social">
+        <span class="social-link linkedin">in</span>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="nos-page">
+      <div class="container">
+
+        <div class="nos-page-title">
+          <h1>Nosotros</h1>
+          <div class="section-line"></div>
+          <p class="nos-page-lead">Nuestro valor está en combinar criterio técnico, visión integral del terminal y apoyo práctico para ejecutar soluciones complejas.</p>
+        </div>
+
+        <!-- ── BLOQUE 1 ── -->
+        <div class="nos-top">
+          <div class="nos-top-left">
+            <div class="nos-features">
+              <div class="nos-feat">
+                <h3>Experiencia aplicada</h3>
+                <p>Conocemos la complejidad de intervenir terminales existentes y activos críticos.</p>
+              </div>
+              <div class="nos-feat">
+                <h3>Integración técnica</h3>
+                <p>Miramos el sistema completo: operación, mecánica, estructura, amarre y ejecución.</p>
+              </div>
+              <div class="nos-feat">
+                <h3>Flexibilidad de apoyo</h3>
+                <p>Podemos entrar con un estudio puntual, una etapa conceptual o soporte a implementación.</p>
+              </div>
+              <div class="nos-feat">
+                <h3>Apoyo logístico complementario</h3>
+                <p>Si el proyecto lo requiere, ayudamos a movilizar la carga necesaria por vía aérea, terrestre o marítima.</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <img src="img/mss-equipo-holograma.jpg" alt="Equipo MSS en terreno" class="nos-img" />
+          </div>
+        </div>
+
+        <!-- ── BLOQUE 2 ── -->
+        <div class="nos-how">
+          <p class="nos-how-lead">Si hoy tienes un cuello de botella, un upgrade pendiente o una necesidad logística compleja, MSS puede ayudarte a estructurar una solución.</p>
+          <p class="nos-how-label">Podemos apoyar en:</p>
+          <div class="nos-steps">
+            <div class="nos-step">
+              <h4>Diagnóstico inicial</h4>
+              <p>Revisión rápida del problema, restricciones y opciones de abordaje.</p>
+            </div>
+            <div class="nos-arrow">→</div>
+            <div class="nos-step">
+              <h4>Propuesta técnica</h4>
+              <p>Definición de alcance, servicio recomendado y forma de trabajo.</p>
+            </div>
+            <div class="nos-arrow">→</div>
+            <div class="nos-step">
+              <h4>Apoyo a proyecto</h4>
+              <p>Ingeniería especializada y, si hace falta, soporte logístico para la carga crítica.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      document.getElementById('mainNav').classList.toggle('active');
+    });
+  </script>
+
+  <footer style="background:#163b66;border-top:1px solid rgba(255,255,255,0.08);padding:10px 0;width:100%;box-sizing:border-box;">
+    <div style="width:100%;max-width:1500px;margin:0 auto;padding:0 40px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:24px;">
+      <div style="display:flex;flex-direction:column;gap:2px;">
+        <img src="img/logo2.png" alt="MSS" style="height:52px;width:auto;object-fit:contain;filter:brightness(0) invert(1);" />
+        <p style="font-size:0.72rem;color:rgba(255,255,255,0.35);margin:2px 0 0;line-height:1.4;">&copy; 2026 Marine Systems &amp; Structures<br>Vi&ntilde;a del Mar, Chile</p>
+      </div>
+      <div style="flex:1;display:flex;align-items:center;justify-content:center;text-align:center;">
+        <span style="color:#ffffff;font-size:1rem;font-weight:400;">14 Nte. 976, Vi&ntilde;a del Mar, Valpara&iacute;so</span>
+      </div>
+      <div style="display:flex;align-items:center;">
+        <a href="https://linkedin.com" target="_blank" style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;background:#2d6fae;color:#fff;font-weight:800;font-size:0.95rem;border-radius:6px;text-decoration:none;">in</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
