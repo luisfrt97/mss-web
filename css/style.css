@@ -130,13 +130,13 @@ textarea {
 
 .main-nav a.active {
   color: #fff;
-  background: var(--blue-main);
+  background: var(--blue-dark);
   font-weight: 600;
 }
 
 .main-nav a.active:hover {
   color: #fff;
-  background: var(--blue-main);
+  background: var(--blue-dark);
 }
 
 .nav-social {
@@ -1235,4 +1235,42 @@ textarea {
   .svm-sec1 h2, .svm-sec2 h2 {
     font-size: 1.3rem !important;
   }
+}
+
+/* ── SVM SERVICIOS ── */
+.svm-sec1 {
+  background: #f5f7fa;
+  padding: 40px 44px 36px;
+  border-radius: 16px 16px 0 0;
+}
+.svm-sec1 h2 { font-size: 1.7rem; font-weight: 700; color: var(--blue-dark); margin: 0 0 6px; text-align: center; }
+.svm-sec1-lead { color: var(--text-main); font-size: 0.97rem; line-height: 1.6; margin: 0 auto 32px; text-align: center; max-width: 640px; }
+.svm-ing-grid { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid #d4dce8; }
+.svm-ing-item { padding: 28px 28px 24px; border-right: 1px solid #d4dce8; border-bottom: 1px solid #d4dce8; }
+.svm-ing-item:nth-child(2n) { border-right: none; }
+.svm-ing-item:nth-last-child(-n+2) { border-bottom: none; }
+.svm-ing-item h3 { font-size: 1.08rem; font-weight: 700; color: var(--blue-dark); margin: 0 0 12px; line-height: 1.25; }
+.svm-ing-item p { margin: 0; color: var(--text-main); font-size: 0.94rem; line-height: 1.6; }
+.svm-tag { margin-top: 20px; background: #dde7f3; color: var(--blue-dark); font-size: 0.88rem; font-weight: 600; padding: 12px 20px; text-align: center; border-radius: 4px; }
+.svm-sec2 { background: #f5f7fa; padding: 40px 44px 44px; border-radius: 0 0 16px 16px; }
+.svm-sec2 h2 { font-size: 1.7rem; font-weight: 700; color: var(--blue-dark); margin: 0 0 6px; text-align: center; }
+.svm-sec2-lead { color: var(--text-main); font-size: 0.97rem; line-height: 1.6; margin: 0 auto 28px; max-width: 600px; text-align: center; }
+.svm-log-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: start; }
+.svm-log-subtitle { font-size: 1.15rem; font-weight: 700; color: var(--blue-dark); margin: 0 0 14px; }
+.svm-bullets { list-style: none; margin: 0 0 24px; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.svm-bullets li { display: flex; align-items: stretch; gap: 10px; color: var(--text-main); font-size: 0.95rem; line-height: 1.55; }
+.svm-bullet-dot { width: 3px; height: auto; min-height: 18px; border-radius: 2px; flex-shrink: 0; align-self: stretch; }
+.dot-blue { background: #2d6fae; }
+.dot-gold { background: #2d6fae; }
+.svm-divider { border: none; border-top: 1px solid #e0e6ed; margin: 20px 0; }
+.svm-how-title { font-size: 1.15rem; font-weight: 700; color: var(--blue-dark); margin: 0 0 10px; }
+.svm-how-text { color: var(--text-main); font-size: 0.94rem; line-height: 1.6; margin: 0 0 20px; }
+.svm-log-tag { background: #dde7f3; color: var(--blue-dark); font-size: 0.88rem; font-weight: 600; padding: 11px 20px; border-radius: 4px; display: block; text-align: center; margin: 16px 0 0; }
+.svm-log-img { width: 100%; border-radius: 10px; overflow: hidden; display: flex; align-items: flex-start; }
+.svm-log-img img { width: 100%; height: auto; object-fit: contain; display: block; }
+@media (max-width: 720px) {
+  .svm-ing-grid { grid-template-columns: 1fr; }
+  .svm-ing-item { border-right: none !important; }
+  .svm-log-grid { grid-template-columns: 1fr !important; }
+  .svm-sec1, .svm-sec2 { padding: 28px 20px; }
 }
