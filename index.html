@@ -85,12 +85,12 @@
     }
     .main-nav .nav-item.active {
       color: #ffffff;
-      background: var(--blue-main);
+      background: var(--blue-dark);
       border-bottom-color: transparent;
       font-weight: 600;
     }
     .main-nav .nav-item.active:hover {
-      background: var(--blue-main);
+      background: var(--blue-dark);
       color: #ffffff;
     }
 
@@ -1486,15 +1486,7 @@
           }
         } else if (sec === 'experiencia') {
           closeSrvModal();
-          if (expModal.classList.contains('active')) {
-            closeExpModal();
-            goTo('experiencia');
-          } else {
-            expModal.classList.add('active');
-            expModal.scrollTop = 0;
-            document.body.style.overflow = 'hidden';
-            setTimeout(function() { setActiveNav('experiencia'); }, 50);
-          }
+          window.location.href = 'experiencia.html';
         } else {
           closeSrvModal();
           closeExpModal();
@@ -1527,7 +1519,9 @@
       if (expModal && expModal.classList.contains('active')) return;
     }
     window.addEventListener('scroll', spy, { passive: true });
-    setActiveNav('inicio');
+    if (!window.location.hash) {
+      setActiveNav('inicio');
+    }
 
     /* ── 5. MENÚ MOBILE ── */
     document.getElementById('menuToggle').addEventListener('click', function() {
@@ -1592,6 +1586,21 @@
     document.addEventListener('keydown', function(e) { if (e.key==='Escape') { closeExpModal(); closeSrvModal(); } });
 
   })();
+    /* ── HASH ON LOAD ── */
+    window.addEventListener('load', function() {
+      var hash = window.location.hash;
+      if (hash === '#experiencia') {
+        expModal.classList.add('active');
+        expModal.scrollTop = 0;
+        document.body.style.overflow = 'hidden';
+        setActiveNav('experiencia');
+      } else if (hash === '#servicios') {
+        srvModal.classList.add('active');
+        srvModal.scrollTop = 0;
+        document.body.style.overflow = 'hidden';
+        setActiveNav('servicios');
+      }
+    });
   </script>
 
   <footer style="background:#163b66;border-top:1px solid rgba(255,255,255,0.08);padding:10px 0;width:100%;box-sizing:border-box;">

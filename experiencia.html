@@ -4,148 +4,109 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MSS | Experiencia del equipo</title>
-  <meta
-    name="description"
-    content="Experiencia del equipo MSS en proyectos marítimo-portuarios."
-  />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
-  
-      <style>
-    .hero-home { min-height: calc(100vh - 90px) !important; overflow: visible !important; }
-    .hero-home-content { min-height: calc(100vh - 170px) !important; }
-    .experience-section-classic { min-height: auto !important; }
+  <style>
+    html, body { margin: 0; }
+    .site-header { background:#fff; border-bottom:1px solid #e0e6ed; position:sticky; top:0; z-index:200; box-shadow:0 2px 12px rgba(0,0,0,0.07); }
+    .header-inner { min-height:80px; display:flex; align-items:center; justify-content:space-between; padding:0 28px; }
+    .logo-img { height:52px; width:auto; display:block; object-fit:contain; }
+    .main-nav { display:flex; align-items:stretch; margin-left:auto; }
+    .main-nav a { display:flex; align-items:center; justify-content:center; padding:0 20px; min-height:80px; font-size:0.93rem; font-weight:500; color:var(--blue-dark); text-decoration:none; white-space:nowrap; transition:0.18s ease; }
+    .main-nav a:hover { color:var(--blue-main); background:rgba(45,111,174,0.06); }
+    .main-nav a.active { color:#fff; background:var(--blue-dark); font-weight:600; }
+    .main-nav a.active:hover { color:#fff !important; background:var(--blue-dark) !important; }
+    .nav-social { display:flex; align-items:center; margin-left:16px; }
+    .social-link.linkedin { width:40px; height:40px; display:grid; place-items:center; border-radius:4px; background:var(--blue-main); color:white; font-weight:800; font-size:0.95rem; text-decoration:none; }
+    .menu-toggle { display:none; background:none; border:none; color:var(--blue-main); font-size:1.7rem; cursor:pointer; }
+
+    .exp-page { background:#f5f7fa; min-height:calc(100vh - 80px); }
+    .exp-modal-head {
+      background: #f5f7fa;
+      padding: 36px 32px 24px;
+      position: relative;
+      border-bottom: 1px solid rgba(22,59,102,0.1);
+      margin-bottom: 8px;
+      max-width: 980px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .exp-modal-head h3 { margin:0 0 4px; color:#163b66; font-size:1.25rem; font-weight:700; }
+    .exp-modal-head p { margin:0; color:var(--text-main); font-size:0.9rem; }
+    .exp-modal-body { padding:28px 32px 60px; max-width:980px; margin:0 auto; }
+    .exp-modal-list { display:grid; gap:12px; }
+    .exp-modal-item { display:flex; align-items:baseline; gap:14px; padding:14px 18px; background:#f6f9fd; border-left:4px solid var(--blue-main); border-radius:0 8px 8px 0; }
+    .exp-modal-item-dot { display:none; }
+    .exp-modal-item-text { color:var(--text-main); font-size:0.96rem; line-height:1.55; }
+    .exp-modal-item-year { margin-left:auto; color:var(--text-main); font-size:0.82rem; white-space:nowrap; flex-shrink:0; }
+
+    @media (max-width:820px) {
+      .main-nav { display:none; flex-direction:column; width:100%; background:#fff; margin-left:0; }
+      .main-nav.active { display:flex; }
+      .main-nav a { min-height:52px; justify-content:flex-start; padding:0 16px; border-bottom:1px solid #eee; }
+      .menu-toggle { display:block; }
+      .header-inner { flex-wrap:wrap; min-height:auto; padding:10px 16px; }
+      .nav-social { display:none; }
+      .exp-modal-head, .exp-modal-body { padding:20px; }
+    }
   </style>
 </head>
-<body class="short-page">
-
+<body>
   <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo-wrap" aria-label="Ir al inicio">
-        <img src="img/logo.png" alt="MSS" class="logo-img" />
+    <div class="header-inner">
+      <a href="index.html" style="text-decoration:none;">
+        <img src="img/logo2.png" alt="MSS" class="logo-img" style="filter:none;" />
       </a>
-
       <nav class="main-nav" id="mainNav">
         <a href="index.html">Inicio</a>
-        <a href="index.html#servicios">Nuestros servicios</a>
+        <a href="servicios.html">Nuestros servicios</a>
         <a class="active" href="experiencia.html">Experiencia del equipo</a>
         <a href="nosotros.html">Nosotros</a>
         <a href="contacto.html">Contacto</a>
       </nav>
-
       <div class="nav-social">
-        <a href="#" class="social-link linkedin" aria-label="LinkedIn">in</a>
+        <a href="https://www.linkedin.com/company/mss-marine-systems-structures" target="_blank" class="social-link linkedin" aria-label="LinkedIn">in</a>
       </div>
-
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+      <button class="menu-toggle" id="menuToggle">☰</button>
     </div>
   </header>
 
   <main>
-    <section class="experience-section-classic page-experience">
-      <div class="experience-overlay"></div>
-
-      <div class="container experience-inner">
-        <div class="experience-title-wrap">
-          <h2>Experiencia del equipo</h2>
-          <p class="experience-subtitle">
-            Casos relevantes desarrollados por el equipo MSS en ingeniería, diseño, construcción, monitoreo y soporte marítimo-portuario.
-          </p>
-        </div>
-
-        <div class="experience-carousel-wrap">
-          <button class="exp-arrow exp-arrow-left" id="expPrev" aria-label="Anterior">‹</button>
-
-          <div class="experience-cards" id="experienceTrack">
-            <article
-              class="experience-card interactive-card"
-              data-title="ENAP Refinería Aconcagua / ERA / SAAM"
-              data-detail="Desconexión, cambio y reinstalación de monoboya en Terminal Marítimo Quintero. Trabajo orientado a continuidad operacional, coordinación técnica y ejecución en un entorno marítimo crítico."
-            >
-              <div class="experience-card-top">
-                <span class="experience-badge">Terminal marítimo</span>
-                <p>Desconexión, cambio y reinstalación de monoboya Terminal Marítimo Quintero.</p>
-              </div>
-              <div class="experience-card-bottom">
-                <h3>ENAP Refinería Aconcagua / ERA / SAAM</h3>
-                <button class="experience-btn" type="button">Ver detalle</button>
-              </div>
-            </article>
-
-            <article
-              class="experience-card interactive-card"
-              data-title="BHP Billiton / Black &amp; Veatch"
-              data-detail="Diseño e ingeniería básica de túneles marinos para nueva planta desaladora proyecto EWS Marine Works. Proyecto enfocado en solución técnica integral y soporte al desarrollo de infraestructura crítica."
-            >
-              <div class="experience-card-top">
-                <span class="experience-badge">Ingeniería marina</span>
-                <p>Diseño e ingeniería básica de túneles marinos para nueva planta desaladora proyecto EWS Marine Works.</p>
-              </div>
-              <div class="experience-card-bottom">
-                <h3>BHP Billiton / Black &amp; Veatch</h3>
-                <button class="experience-btn" type="button">Ver detalle</button>
-              </div>
-            </article>
-
-            <article
-              class="experience-card interactive-card"
-              data-title="AES Gener"
-              data-detail="Diseño, ingeniería, construcción, monitoreo y mantención de sistema de prefiltro de sifones de succión. Solución orientada a operación confiable, mantenimiento y soporte técnico continuo."
-            >
-              <div class="experience-card-top">
-                <span class="experience-badge">Sistema industrial</span>
-                <p>Diseño, ingeniería, construcción, monitoreo y mantención de sistema de prefiltro de sifones de succión.</p>
-              </div>
-              <div class="experience-card-bottom">
-                <h3>AES Gener</h3>
-                <button class="experience-btn" type="button">Ver detalle</button>
-              </div>
-            </article>
-          </div>
-
-          <button class="exp-arrow exp-arrow-right" id="expNext" aria-label="Siguiente">›</button>
-        </div>
-
-        <div class="experience-list-panel">
-          <h3>Listado de experiencias</h3>
-
-          <div class="detail-listing">
-            <div class="listing-item">
-              <strong>BHP Billiton / Black &amp; Veatch</strong>
-              <span>Diseño e ingeniería básica de túneles marinos para nueva planta desaladora proyecto EWS Marine Works.</span>
-            </div>
-
-            <div class="listing-item">
-              <strong>AES Gener</strong>
-              <span>Diseño, ingeniería, construcción, monitoreo y mantención de sistema de prefiltro de sifones de succión.</span>
-            </div>
-
-            <div class="listing-item">
-              <strong>ENAP Refinería Aconcagua / ERA / SAAM</strong>
-              <span>Desconexión, cambio y reinstalación de monoboya Terminal Marítimo Quintero.</span>
-            </div>
-          </div>
+    <div class="exp-page">
+      <div class="exp-modal-head">
+        <h3>Experiencia del equipo</h3>
+        <p>Listado completo de proyectos desarrollados por MSS</p>
+      </div>
+      <div class="exp-modal-body">
+        <div class="exp-modal-list">
+          <div class="exp-modal-item"><div class="exp-modal-item-dot"></div><span class="exp-modal-item-text">Inspección estructural en superficie y submarina de muelle</span><span class="exp-modal-item-year">CMDIC / 2021</span></div>
+          <div class="exp-modal-item"><div class="exp-modal-item-dot"></div><span class="exp-modal-item-text">Estudio geotécnico marino de 6 puntos de sondaje</span><span class="exp-modal-item-year">CMDIC / 2021</span></div>
+          <div class="exp-modal-item"><div class="exp-modal-item-dot"></div><span class="exp-modal-item-text">Estudios de Ingeniería Costera para instalación de estructuras marinas (superficie y submarino)</span><span class="exp-modal-item-year">CMDIC / 2021</span></div>
+          <div class="exp-modal-item"><div class="exp-modal-item-dot"></div><span class="exp-modal-item-text">Estudio de impacto operacional de la instalación de planta desaladora sobre el Terminal Marítimo de Patache</span><span class="exp-modal-item-year">CMDIC / 2020</span></div>
+          <div class="exp-modal-item"><div class="exp-modal-item-dot"></div><span class="exp-modal-item-text">Servicio de ITO para la construcción de Shiploader — sistema de carguío de naves</span><span class="exp-modal-item-year">CMDIC / 2020</span></div>
+          <div class="exp-modal-item"><div class="exp-modal-item-dot"></div><span class="exp-modal-item-text">Rescate de ancla y cadena Calbuco — Batavia Express</span><span class="exp-modal-item-year">2019</span></div>
+          <div class="exp-modal-item"><div class="exp-modal-item-dot"></div><span class="exp-modal-item-text">Plan de salvamento M/N Coyhaique IMO 8009016</span><span class="exp-modal-item-year">OXXEAN / 2019</span></div>
+          <div class="exp-modal-item"><div class="exp-modal-item-dot"></div><span class="exp-modal-item-text">Liberación M/N Leonidas V.5 — Puerto Patillo</span><span class="exp-modal-item-year">K+S / 2019</span></div>
+          <div class="exp-modal-item"><div class="exp-modal-item-dot"></div><span class="exp-modal-item-text">Diseño de ingeniería de liberación de nave accidentada por caída de Shiploader</span><span class="exp-modal-item-year">CMP / 2018</span></div>
+          <div class="exp-modal-item"><div class="exp-modal-item-dot"></div><span class="exp-modal-item-text">Diseño de ingeniería y montaje de sistema de amarre de naves</span><span class="exp-modal-item-year">CMDIC / 2018</span></div>
+          <div class="exp-modal-item"><div class="exp-modal-item-dot"></div><span class="exp-modal-item-text">OSR First Action Service — MT Aztec Bahía de Mejillones</span><span class="exp-modal-item-year">2018</span></div>
+          <div class="exp-modal-item"><div class="exp-modal-item-dot"></div><span class="exp-modal-item-text">Fondeo de centro de cultivo de corvina</span><span class="exp-modal-item-year">UNAP / 2018</span></div>
+          <div class="exp-modal-item"><div class="exp-modal-item-dot"></div><span class="exp-modal-item-text">Cambio de boya Esmeralda Iquique</span><span class="exp-modal-item-year">Gobernación Marítima / 2018</span></div>
+          <div class="exp-modal-item"><div class="exp-modal-item-dot"></div><span class="exp-modal-item-text">Reconexión boya de amarre ITI</span><span class="exp-modal-item-year">ITI / 2018</span></div>
+          <div class="exp-modal-item"><div class="exp-modal-item-dot"></div><span class="exp-modal-item-text">Instalación de anclaje de boya (Bienal)</span><span class="exp-modal-item-year">CDMIC / 2015–2017</span></div>
+          <div class="exp-modal-item"><div class="exp-modal-item-dot"></div><span class="exp-modal-item-text">Inspección pilotes Sitio 4 ITI</span><span class="exp-modal-item-year">ITI / 2017</span></div>
+          <div class="exp-modal-item"><div class="exp-modal-item-dot"></div><span class="exp-modal-item-text">Instalación protección catódica Sitio 4 ITI</span><span class="exp-modal-item-year">ITI / 2014</span></div>
+          <div class="exp-modal-item"><div class="exp-modal-item-dot"></div><span class="exp-modal-item-text">Inspección para habilitación post terremoto Sitio 3 y ATI</span><span class="exp-modal-item-year">ITI / 2014</span></div>
+          <div class="exp-modal-item"><div class="exp-modal-item-dot"></div><span class="exp-modal-item-text">Enrocado espigón ITI</span><span class="exp-modal-item-year">ITI / 2013</span></div>
+          <div class="exp-modal-item"><div class="exp-modal-item-dot"></div><span class="exp-modal-item-text">Ampliación Sitio ATI</span><span class="exp-modal-item-year">ATI / 2012</span></div>
+          <div class="exp-modal-item"><div class="exp-modal-item-dot"></div><span class="exp-modal-item-text">Inspección líneas de hidrocarburo Terminal Copec Arica</span><span class="exp-modal-item-year">Copec / 2012</span></div>
+          <div class="exp-modal-item"><div class="exp-modal-item-dot"></div><span class="exp-modal-item-text">Dragado Sitio 3 ITI</span><span class="exp-modal-item-year">ITI / 2011</span></div>
         </div>
       </div>
-    </section>
-  </main>
-
-  <div class="experience-modal" id="experienceModal">
-    <div class="experience-modal-backdrop" id="experienceModalBackdrop"></div>
-    <div class="experience-modal-box">
-      <button class="experience-modal-close" id="experienceModalClose" aria-label="Cerrar">×</button>
-      <span class="experience-modal-kicker">Detalle de experiencia</span>
-      <h3 id="experienceModalTitle">Título</h3>
-      <p id="experienceModalText">Detalle</p>
     </div>
-  </div>
-
-  <script src="js/script.js"></script>
+  </main>
 
   <footer style="background:#163b66;border-top:1px solid rgba(255,255,255,0.08);padding:10px 0;width:100%;box-sizing:border-box;">
     <div style="width:100%;max-width:1500px;margin:0 auto;padding:0 40px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:24px;">
@@ -157,10 +118,15 @@
         <span style="color:#ffffff;font-size:1rem;font-weight:400;">14 Nte. 976, Vi&ntilde;a del Mar, Valpara&iacute;so</span>
       </div>
       <div style="display:flex;align-items:center;">
-        <a href="https://linkedin.com" target="_blank" style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;background:#2d6fae;color:#fff;font-weight:800;font-size:0.95rem;border-radius:6px;text-decoration:none;">in</a>
+        <a href="https://www.linkedin.com/company/mss-marine-systems-structures" target="_blank" style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;background:#2d6fae;color:#fff;font-weight:800;font-size:0.95rem;border-radius:6px;text-decoration:none;">in</a>
       </div>
     </div>
   </footer>
 
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      document.getElementById('mainNav').classList.toggle('active');
+    });
+  </script>
 </body>
 </html>

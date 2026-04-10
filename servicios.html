@@ -3,33 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MSS | Inicio</title>
-  <meta
-    name="description"
-    content="MSS entrega ingeniería aplicada para optimización de terminales, continuidad operacional y apoyo logístico multimodal."
-  />
+  <title>MSS | Nuestros servicios</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
-  
-      <style>
-    .hero-home { min-height: calc(100vh - 90px) !important; overflow: visible !important; }
-    .hero-home-content { min-height: calc(100vh - 170px) !important; }
-    .experience-section-classic { min-height: auto !important; }
+  <style>
+    .site-header { background:#fff; border-bottom:1px solid #e0e6ed; position:sticky; top:0; z-index:200; box-shadow:0 2px 12px rgba(0,0,0,0.07); }
+    .header-inner { min-height:80px; display:flex; align-items:center; justify-content:space-between; padding:0 28px; }
+    .logo-img { height:52px; width:auto; display:block; object-fit:contain; }
+    .main-nav { display:flex; align-items:stretch; margin-left:auto; }
+    .main-nav a { display:flex; align-items:center; justify-content:center; padding:0 20px; min-height:80px; font-size:0.93rem; font-weight:500; color:var(--blue-dark); text-decoration:none; white-space:nowrap; transition:0.18s ease; }
+    .main-nav a:hover { color:var(--blue-main); background:rgba(45,111,174,0.06); }
+    .main-nav a.active { color:#fff; background:var(--blue-dark); font-weight:600; }
+    .main-nav a.active:hover { color:#fff !important; background:var(--blue-dark) !important; }
+    .nav-social { display:flex; align-items:center; margin-left:16px; }
+    .social-link.linkedin { width:40px; height:40px; display:grid; place-items:center; border-radius:4px; background:var(--blue-main); color:white; font-weight:800; font-size:0.95rem; text-decoration:none; }
+    .menu-toggle { display:none; background:none; border:none; color:var(--blue-main); font-size:1.7rem; cursor:pointer; }
+    @media (max-width:820px) {
+      .main-nav { display:none; flex-direction:column; width:100%; background:#fff; margin-left:0; }
+      .main-nav.active { display:flex; }
+      .main-nav a { min-height:52px; justify-content:flex-start; padding:0 16px; border-bottom:1px solid #eee; }
+      .menu-toggle { display:block; }
+      .header-inner { flex-wrap:wrap; min-height:auto; padding:10px 16px; }
+      .nav-social { display:none; }
+    }
   </style>
 </head>
-<body class="short-page">
-
+<body>
   <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo-wrap" aria-label="Ir al inicio">
-        <img src="img/logo.png" alt="MSS" class="logo-img" />
+    <div class="header-inner">
+      <a href="index.html" style="text-decoration:none;">
+        <img src="img/logo2.png" alt="MSS" class="logo-img" />
       </a>
-
       <nav class="main-nav" id="mainNav">
         <a href="index.html">Inicio</a>
         <a class="active" href="servicios.html">Nuestros servicios</a>
@@ -37,45 +43,67 @@
         <a href="nosotros.html">Nosotros</a>
         <a href="contacto.html">Contacto</a>
       </nav>
-
       <div class="nav-social">
-        <a href="#" class="social-link linkedin" aria-label="LinkedIn">in</a>
+        <a href="https://www.linkedin.com/company/mss-marine-systems-structures" target="_blank" class="social-link linkedin" aria-label="LinkedIn">in</a>
       </div>
-
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+      <button class="menu-toggle" id="menuToggle">☰</button>
     </div>
   </header>
 
-  <main>
-    <section class="hero-home" id="inicio">
-      <div class="hero-home-overlay"></div>
+  <main style="background:#f5f7fa; min-height:calc(100vh - 80px);">
+    <div style="max-width:980px; margin:0 auto; padding:20px 32px 60px; box-sizing:border-box;">
 
-      <div class="container hero-home-content center-hero">
-        <div class="hero-home-copy center-text hero-slide-in">
-          <span class="hero-kicker hero-item hero-item-1">Marine Systems &amp; Structures</span>
-
-          <h1 class="hero-item hero-item-2">
-            Optimización de terminales para máxima continuidad operacional
-          </h1>
-
-          <p class="hero-item hero-item-3">
-            Identificamos cuellos de botella, priorizamos mejoras y ejecutamos soluciones aplicables en terreno.
-          </p>
-
-          <div class="hero-actions hero-item hero-item-4">
-            <a href="servicios.html" class="hero-btn hero-btn-primary">Ver servicios</a>
-            <a href="contacto.html" class="hero-btn hero-btn-secondary">Contactar</a>
+      <!-- BLOQUE 1: Servicios de ingeniería -->
+      <div class="svm-sec1">
+        <h2>Servicios de ingeniería</h2>
+        <p class="svm-sec1-lead">Integramos visión operacional, mecánica, estructural y marítima para desarrollar soluciones que sí se pueden implementar.</p>
+        <div class="svm-ing-grid">
+          <div class="svm-ing-item">
+            <h3>Optimización de terminales</h3>
+            <p>Diagnóstico operacional, throughput real, cuellos de botella y escenarios de mejora.</p>
           </div>
-
-          <div class="hero-highlight hero-item hero-item-5">
-            MSS: ingeniería aplicada para optimización y resolución de brechas operacionales.
+          <div class="svm-ing-item">
+            <h3>Repotenciación de loading systems</h3>
+            <p>Shiploaders, conveyors y sistemas asociados: capacidad, confiabilidad, integración y upgrade.</p>
+          </div>
+          <div class="svm-ing-item">
+            <h3>Upgrade de amarre y atraque</h3>
+            <p>Evaluación de bollards, defensas, geometría y restricciones operacionales.</p>
+          </div>
+          <div class="svm-ing-item">
+            <h3>Ingeniería FEL / Soporte a proyectos</h3>
+            <p>Estudios FEL, conceptos de expansión, apoyo técnico y constructibilidad sobre terminales existentes.</p>
           </div>
         </div>
+        <div class="svm-tag">Especial foco en terminales mineros y activos existentes</div>
       </div>
-    </section>
-  </main>
 
-  <script src="js/script.js"></script>
+      <!-- BLOQUE 2: Apoyo logístico -->
+      <div class="svm-sec2">
+        <h2>Apoyo logístico multimodal</h2>
+        <p class="svm-sec2-lead">Podemos complementar la ingeniería con apoyo para movilizar cargas críticas y especiales cuando el proyecto lo requiera.</p>
+        <div class="svm-log-grid">
+          <div class="svm-log-left">
+            <p class="svm-log-subtitle">Qué podemos apoyar</p>
+            <ul class="svm-bullets">
+              <li><span class="svm-bullet-dot dot-blue"></span>gestión de nave aérea, terrestre o marítima según la necesidad del proyecto</li>
+              <li><span class="svm-bullet-dot dot-gold"></span>apoyo en traslado de cualquier carga, sin importar dimensión o peso</li>
+              <li><span class="svm-bullet-dot dot-blue"></span>coordinación logística para equipos sobredimensionados, críticos o de alto impacto operacional</li>
+              <li><span class="svm-bullet-dot dot-blue"></span>alineamiento entre ventana logística y requerimiento técnico del proyecto</li>
+            </ul>
+            <hr class="svm-divider" />
+            <p class="svm-how-title">Cómo se presenta este servicio</p>
+            <p class="svm-how-text">Como un apoyo complementario para dar continuidad, velocidad y coordinación práctica al proyecto.</p>
+          </div>
+          <div class="svm-log-img">
+            <img src="img/logistica.jpg" alt="Apoyo logístico multimodal MSS" />
+          </div>
+        </div>
+        <span class="svm-log-tag">Ingeniería + logística alineadas al proyecto</span>
+      </div>
+
+    </div>
+  </main>
 
   <footer style="background:#163b66;border-top:1px solid rgba(255,255,255,0.08);padding:10px 0;width:100%;box-sizing:border-box;">
     <div style="width:100%;max-width:1500px;margin:0 auto;padding:0 40px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:24px;">
@@ -87,10 +115,15 @@
         <span style="color:#ffffff;font-size:1rem;font-weight:400;">14 Nte. 976, Vi&ntilde;a del Mar, Valpara&iacute;so</span>
       </div>
       <div style="display:flex;align-items:center;">
-        <a href="https://linkedin.com" target="_blank" style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;background:#2d6fae;color:#fff;font-weight:800;font-size:0.95rem;border-radius:6px;text-decoration:none;">in</a>
+        <a href="https://www.linkedin.com/company/mss-marine-systems-structures" target="_blank" style="display:flex;align-items:center;justify-content:center;width:38px;height:38px;background:#2d6fae;color:#fff;font-weight:800;font-size:0.95rem;border-radius:6px;text-decoration:none;">in</a>
       </div>
     </div>
   </footer>
 
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      document.getElementById('mainNav').classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
