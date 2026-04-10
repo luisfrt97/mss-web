@@ -50,7 +50,17 @@
       .menu-toggle { display:block; }
       .header-inner { flex-wrap:wrap; min-height:auto; padding:10px 16px; }
       .nav-social { display:none; }
-      .exp-modal-head, .exp-modal-body { padding:20px; }
+      .exp-modal-head { padding:32px 20px 20px; }
+      .exp-modal-body { padding:20px; }
+      .exp-modal-head h3 { font-size:1.4rem; }
+    }
+    @media (max-width:600px) {
+      .exp-modal-head { padding:24px 16px 16px; }
+      .exp-modal-head h3 { font-size:1.2rem; }
+      .exp-modal-head p { font-size:0.9rem; }
+      .exp-modal-body { padding:16px; }
+      .exp-modal-item { flex-wrap:wrap; gap:8px; padding:12px; }
+      .exp-modal-item-year { margin-left:0; }
     }
   </style>
 </head>
